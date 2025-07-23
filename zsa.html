@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Achaa 💌</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      text-align: center;
+      padding: 50px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #d63384;
+      margin-bottom: 10px;
+    }
+
+    .gif-container img {
+      width: 200px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    .envelope {
+      font-size: 60px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      margin: 20px;
+    }
+
+    .envelope:hover {
+      transform: scale(1.2);
+    }
+
+    .instruction {
+      font-size: 1em;
+      color: #a2005e;
+      margin-bottom: 15px;
+      animation: fadeIn 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0.4;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .message {
+      display: none;
+      background-color: #ffe6f0;
+      border: 2px dashed #ff69b4;
+      padding: 25px;
+      margin-top: 30px;
+      border-radius: 15px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.2em;
+      color: #c2185b;
+      animation: fadeInText 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeInText {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .next-button {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .next-button button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .next-button button:hover {
+      background-color: #e91e63;
+    }
+
+    .photo-display {
+      display: none;
+      margin-top: 25px;
+    }
+
+    .photo-display img {
+      width: 90%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+    }
+
+    .flower {
+      position: absolute;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://tl.vhv.rs/dpng/s/469-4692683_transparent-sakura-flower-png-cherry-blossom-pixel-art.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.7;
+      pointer-events: none;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .credit {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      background: #222;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.9em;
+      font-family: monospace;
+      box-shadow: 0 0 12px #ff5fcf, 0 0 20px #ff5fcf, 0 0 30px #ff5fcf;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Halo sayangku Achaa 💌</h1>
+
+  <div class="gif-container">
+    <img
+      src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTJiZGRwdHRmM3Bobm5rbXZ4N2lzaHo1Nmt6b2N2YzBsbWpuZXE5NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NxC8VtyxqhMtpLoEEN/giphy.gif"
+      alt="Love GIF">
+  </div>
+
+  <p class="instruction">Klik ✉️ yaa</p>
+
+  <div>
+    <span class="envelope" onclick="showLove()">✉️</span>
+  </div>
+
+  <div id="loveMessage" class="message">
+    Hai cintaku Achaa 💖<br><br>
+    Aku cuma mau bilang...<br>
+    Kamu itu segalanya buat aku 🥺❤️<br>
+    Makasih udah selalu ada, selalu sabar, dan selalu buat aku tersenyum. <br>
+    Aku sayang banget sama kamu, lebih dari kata-kata bisa jelaskan. <br><br>
+    Peluk dan cium dari aku 💋
+  </div>
+
+  <!-- Tombol Next -->
+  <div id="nextButton" class="next-button">
+    <button onclick="showPhoto()">open📸</button>
+  </div>
+
+  <!-- Foto akan muncul di sini -->
+  <div id="photoDisplay" class="photo-display">
+    <img src="https://i.ibb.co/3yt44zxB/8236764540-111154976498917-1752735477860-1.png" alt="Kenangan Bersama">
+  </div>
+
+  <!-- Musik Sparkle -->
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/47d2pw.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung audio.
+  </audio>
+  <audio controls autoplay loop>
+  <source src="https://files.catbox.moe/47d2pw.mp3" type="audio/mpeg">
+</audio>
+
+
+  <!-- Label By Aldi -->
+  <div class="credit">By Aldi</div>
+
+  <!-- Efek bunga -->
+  <script>
+    function showLove() {
+      document.getElementById("loveMessage").style.display = "block";
+      document.getElementById("nextButton").style.display = "block";
+    }
+
+    function showPhoto() {
+      document.getElementById("photoDisplay").style.display = "block";
+    }
+
+    function createFlower() {
+      const flower = document.createElement("div");
+      flower.classList.add("flower");
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(flower);
+      setTimeout(() => flower.remove(), 10000);
+    }
+
+    setInterval(createFlower, 200);
+  </script>
+
+</body>
+
+</html><
