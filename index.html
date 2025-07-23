@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Smozhy (Lilia) 🌌</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Bmam1peXVubTNlM2g5aXR1dHc0MzRqOTUzamN5cW1nMWM1a21qOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3og0IV7MOCfnm85iRa/giphy.gif') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-top: 60px;
+      color: #ffffff;
+      text-shadow: 0 0 15px #8ab4f8;
+    }
+
+    .gif-container img {
+      width: 180px;
+      margin-top: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+
+    .envelope {
+      font-size: 60px;
+      cursor: pointer;
+      margin: 40px 0;
+      animation: bounce 2s infinite;
+    }
+
+    .envelope:hover {
+      transform: scale(1.15);
+    }
+
+    .message {
+      display: none;
+      background-color: rgba(0, 0, 0, 0.6);
+      border: 2px dashed #a1c4fd;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 600px;
+      margin: 30px auto;
+      font-size: 1.3em;
+      color: #ffffff;
+      animation: fadeIn 1s ease-in-out forwards;
+      backdrop-filter: blur(10px);
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .stars, .shooting-stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .stars {
+      background: url('y') repeat;
+      opacity: 0.4;
+    }
+
+    .shooting-stars::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 3px;
+      height: 100px;
+      background: linear-gradient(45deg, #fff, transparent);
+      animation: shoot 3s infinite;
+    }
+
+    @keyframes shoot {
+      0% {
+        transform: translate(0, 0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(100vw, 100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .credit {
+      position: fixed;
+      bottom: 15px;
+      right: 20px;
+      padding: 8px 16px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      font-size: 0.9em;
+      border: 1px solid #8ab4f8;
+      box-shadow: 0 0 15px #8ab4f8;
+      backdrop-filter: blur(6px);
+    }
+
+    .instruction {
+      font-size: 1em;
+      margin-top: 10px;
+      color: #aad3ff;
+    }
+
+    .photo-slide {
+      display: none;
+      margin-top: 30px;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    .photo-slide img {
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .photo-caption {
+      margin-top: 10px;
+      font-style: italic;
+      font-size: 0.95em;
+      color: #aad3ff;
+    }
+
+    .next-btn {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #8ab4f8;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 10px #8ab4f8;
+      transition: transform 0.3s;
+    }
+
+    .next-btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stars"></div>
+  <div class="shooting-stars"></div>
+
+  <h1>Halo Smuji 🌠</h1>
+
+  <div class="gif-container">
+    <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGdiOGd3YmFsM2E0Z24xZW4xMHVlbmU1ODRiaXM5YXpnMmNmaGk2OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mFeN9nsA3vtGR6fPzU/giphy.gif" alt="Cute Galaxy GIF">
+  </div>
+
+  <div class="instruction">Klik ✉️ I have somethin fo ya</div>
+  <div>
+    <span class="envelope" onclick="showMessage()">✉️</span>
+  </div>
+
+  <div id="thankYouMessage" class="message">
+    Hai Smozhy (Lilia) 🌌<br><br>
+    Terima kasih sudah jadi teman yang baik dan menyenangkan.<br>
+    Di tengah semua hal yang terjadi, kamu tetap hadir dengan sikap hangatmu. <br>
+    Dunia terasa lebih tenang karena ada teman like you 💫<br><br>
+    Tetap bersinar seperti bintang ya, Smozhy! 🌟<br>
+    <strong>Thank for being nice 🤍</strong>
+  </div>
+
+  <button id="nextButton" class="next-btn" onclick="showPhoto()">Lanjut </button>
+
+  <div id="photoSlide" class="photo-slide">
+    <img src="https://i.ibb.co/nsKw0WJy/Screenshot-2025-07-22-23-24-59-129-com-roblox-client-edit.jpg" alt="Foto Kenangan">
+    <div class="photo-caption">*maap ga ada poto berdua di roblox 😅</div>
+  </div>
+
+  <!-- Musik Galaxy -->
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/1nraei.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung audio.
+  </audio>
+  <p style="margin-top: 40px; color: #00f; font-style: italic;">
+  🎵 Nih ku tambahin klo audionya ga autoplay play sendiri ya smuji😭
+  </p>
+  <audio controls autoplay loop>
+  <source src="https://files.catbox.moe/1nraei.mp3" type="audio/mpeg">
+</audio>
+  <p style="margin-bottom: 40px; color: #00f; font-style: italic;">
+  soalnya aga susah coding autoplay music kadang ada browser ga support😭
+  </p>
+
+
+  <!-- Kredit -->
+  <div class="credit">By Aldi</div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("thankYouMessage").style.display = "block";
+      document.getElementById("nextButton").style.display = "inline-block";
+    }
+
+    function showPhoto() {
+      document.getElementById("photoSlide").style.display = "block";
+      document.getElementById("nextButton").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
